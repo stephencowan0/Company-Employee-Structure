@@ -1,0 +1,14 @@
+Stephen,CEO,CEO,1000000,None,Store Manager,Corporate,3
+Cody,Store Manager,Store 28 Manager,100000,CEO,Assisstant Store Manager,Upper Management,2
+Avery,Assisstant Store Manager,Assisstant Store Manager HR,80000,Store Manager,Department Manager,Upper Management,1
+Steve,Assisstant Store Manager,Assisstant Store Manager Operations,80000,Store Manager,Department Manager,Upper Management,1
+Brittany,Department Manager,Front-End Manager,60000,Assisstant Store Manager,Head Clerk,Front-End,0
+Dylan,Department Manager,Pharmacy Manager,60000,Assisstant Store Manager,Department Employees,Pharmacy,0
+Lily,Department Manager,Meat/Seafood Manager,60000,Assisstant Store Manager,Department Employees,Meat/Seafood,0
+Kelly,Department Manager,Produce Manager,60000,Assisstant Store Manager,Department Employees,Produce,0
+Steve,Department Manager,General Merchandise Manager,60000,Assisstant Store Manager,Department Employees,General Merchandise,0
+Devin,Department Manager,Grocery Manager,60000,Assisstant Store Manager,Department Employees,Grocery,0
+Jeremy,Department Manager,Deli Manager,60000,Assisstant Store Manager,Department Employees,Deli,0
+Sean,Department Manager,Starbucks Manager,60000,Assisstant Store Manager,Department Employees,Starbucks,0
+Jeff,Department Manager,Night Crew Foreman,60000,Assisstant Store Manager,Department Employees,Night Crew,0
+Corina,Department Manager,Clicklist Manager,60000,Assisstant Store Manager,Department Employees,Clicklist,0
