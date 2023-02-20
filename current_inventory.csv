@@ -1,0 +1,15 @@
+Name,Position,Position Description,Salary,Managed By,Subordinates,Department
+Stephen,CEO,CEO,1000000000,None,Store Manager,Corporate
+Cody,Store Manager,Store 28 Manager,100000,CEO,Assisstant Store Manager,Upper Management
+Avery,Assisstant Store Manager,Assisstant Store Manager HR,80000,Store Manager,Department Manager,Upper Management
+Steve,Assisstant Store Manager,Assisstant Store Manager Operations,80000,Store Manager,Department Manager,Upper Management
+Brittany,Department Manager,Front-End Manager,60000,Assisstant Store Manager,Head Clerk,Front-End
+Dylan,Department Manager,Pharmacy Manager,60000,Assisstant Store Manager,Department Employees,Pharmacy
+Lily,Department Manager,Meat/Seafood Manager,60000,Assisstant Store Manager,Department Employees,Meat/Seafood
+Kelly,Department Manager,Produce Manager,60000,Assisstant Store Manager,Department Employees,Produce
+Steve,Department Manager,General Merchandise Manager,60000,Assisstant Store Manager,Department Employees,General Merchandise
+Devin,Department Manager,Grocery Manager,60000,Assisstant Store Manager,Department Employees,Grocery
+Jeremy,Department Manager,Deli Manager,60000,Assisstant Store Manager,Department Employees,Deli
+Sean,Department Manager,Starbucks Manager,60000,Assisstant Store Manager,Department Employees,Starbucks
+Jeff,Department Manager,Night Crew Foreman,60000,Assisstant Store Manager,Department Employees,Night Crew
+Corina,Department Manager,Clicklist Manager,60000,Assisstant Store Manager,Department Employees,Clicklist
