@@ -70,13 +70,13 @@ public:
     }
 };
 
-class Department_Manager : public Employee
+class Head_Clerk : public Employee
 {
 protected:
     vector<Employee> *subordinates;
 
 public:
-    Department_Manager(string new_name, string new_position, string new_position_description, int new_salary, string new_department, int new_level)
+    Head_Clerk(string new_name, string new_position, string new_position_description, int new_salary, string new_department, int new_level)
     {
         name = new_name;
         position = new_position;
@@ -91,6 +91,32 @@ public:
         subordinates = new_subordinates;
     }
     vector<Employee> return_subordinates()
+    {
+        return *subordinates;
+    }
+};
+
+class Department_Manager : public Employee
+{
+protected:
+    vector<Head_Clerk> *subordinates;
+
+public:
+    Department_Manager(string new_name, string new_position, string new_position_description, int new_salary, string new_department, int new_level)
+    {
+        name = new_name;
+        position = new_position;
+        position_description = new_position_description;
+        salary = new_salary;
+        subordinates = nullptr;
+        department = new_department;
+        level = new_level;
+    }
+    void set_subordinates(vector<Head_Clerk> *new_subordinates)
+    {
+        subordinates = new_subordinates;
+    }
+    vector<Head_Clerk> return_subordinates()
     {
         return *subordinates;
     }

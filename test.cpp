@@ -1,6 +1,6 @@
 case 2:
 {
-    Department_Manager new_Department_Manager = create_Department_Manager_from_data(rows_of_data[i]);
-    Department_Managers.push_back(new_Department_Manager);
+    Head_Clerk new_Head_Clerk = create_Head_Clerk_from_data(rows_of_data[i]);
+    Head_Clerks.push_back(new_Head_Clerk);
     break;
 }

@@ -127,14 +127,37 @@ Department_Manager create_Department_Manager_from_data(string string_of_data)
     return new_Department_Manager;
 }
 
+Head_Clerk create_Head_Clerk_from_data(string string_of_data)
+{
+    vector<string> class_data;
+    stringstream words(string_of_data);
+    string data;
+    while (getline(words, data, ','))
+    {
+        class_data.push_back(data);
+    }
+
+    string name = class_data[0];
+    string position = class_data[1];
+    string position_description = class_data[2];
+    int salary = stoi(class_data[3]);
+    string department = class_data[6];
+    int level = stoi(class_data[7]);
+
+    Head_Clerk new_Head_Clerk = Head_Clerk(name, position, position_description, salary, department, level);
+    return new_Head_Clerk;
+}
+
 int main()
 {
     vector<string> rows_of_data = read_data();
-    vector<Employee> employees;
+
     vector<CEO> CEOs;
     vector<Store_Manager> Store_Managers;
     vector<Assistant_Store_Manager> Assistant_Store_Managers;
     vector<Department_Manager> Department_Managers;
+    vector<Head_Clerk> Head_Clerks;
+
     for (int i = 0; i < rows_of_data.size(); i++)
     {
         string current_row = rows_of_data[i];
@@ -142,28 +165,34 @@ int main()
         int employee_type = stoi(current_row);
         switch (employee_type)
         {
-        case 3:
+        case 5:
         {
             CEO new_CEO = create_CEO_from_data(rows_of_data[i]);
             CEOs.push_back(new_CEO);
             break;
         }
-        case 2:
+        case 4:
         {
             Store_Manager new_Store_Manager = create_Store_Manager_from_data(rows_of_data[i]);
             Store_Managers.push_back(new_Store_Manager);
             break;
         }
-        case 1:
+        case 3:
         {
             Assistant_Store_Manager new_Assistant_Store_Manager = create_Assistant_Store_Manager_from_data(rows_of_data[i]);
             Assistant_Store_Managers.push_back(new_Assistant_Store_Manager);
             break;
         }
-        case 0:
+        case 2:
         {
             Department_Manager new_Department_Manager = create_Department_Manager_from_data(rows_of_data[i]);
             Department_Managers.push_back(new_Department_Manager);
+            break;
+        }
+        case 1:
+        {
+            Head_Clerk new_Head_Clerk = create_Head_Clerk_from_data(rows_of_data[i]);
+            Head_Clerks.push_back(new_Head_Clerk);
             break;
         }
         default:
@@ -200,6 +229,11 @@ int main()
     {
         cout << Department_Managers[i].return_name() << " is the " << Department_Managers[i].return_position_description() << endl;
     }
-
+    cout << endl;
+    cout << "Head Clerks: " << endl;
+    for (int i = 0; i < Head_Clerks.size(); i++)
+    {
+        cout << Head_Clerks[i].return_name() << endl;
+    }
     return 0;
 }
