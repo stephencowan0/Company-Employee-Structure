@@ -131,14 +131,75 @@ int main()
 {
     vector<string> rows_of_data = read_data();
     vector<Employee> employees;
+    vector<CEO> CEOs;
+    vector<Store_Manager> Store_Managers;
+    vector<Assistant_Store_Manager> Assistant_Store_Managers;
+    vector<Department_Manager> Department_Managers;
     for (int i = 0; i < rows_of_data.size(); i++)
     {
-        Employee new_employee = create_employee_from_data(rows_of_data[i]);
-        employees.push_back(new_employee);
+        string current_row = rows_of_data[i];
+        current_row = current_row[current_row.length() - 1];
+        int employee_type = stoi(current_row);
+        switch (employee_type)
+        {
+        case 3:
+        {
+            CEO new_CEO = create_CEO_from_data(rows_of_data[i]);
+            CEOs.push_back(new_CEO);
+            break;
+        }
+        case 2:
+        {
+            Store_Manager new_Store_Manager = create_Store_Manager_from_data(rows_of_data[i]);
+            Store_Managers.push_back(new_Store_Manager);
+            break;
+        }
+        case 1:
+        {
+            Assistant_Store_Manager new_Assistant_Store_Manager = create_Assistant_Store_Manager_from_data(rows_of_data[i]);
+            Assistant_Store_Managers.push_back(new_Assistant_Store_Manager);
+            break;
+        }
+        case 0:
+        {
+            Department_Manager new_Department_Manager = create_Department_Manager_from_data(rows_of_data[i]);
+            Department_Managers.push_back(new_Department_Manager);
+            break;
+        }
+        default:
+            break;
+        }
     }
-    for (int i = 0; i < employees.size(); i++)
+
+    for (int i = 0; i < CEOs.size(); i++)
     {
-        employees[i].display_employee_info();
+        CEOs[i].set_subordinates(&Store_Managers);
     }
+    for (int i = 0; i < Store_Managers.size(); i++)
+    {
+        Store_Managers[i].set_subordinates(&Assistant_Store_Managers);
+    }
+    for (int i = 0; i < Assistant_Store_Managers.size(); i++)
+    {
+        Assistant_Store_Managers[i].set_subordinates(&Department_Managers);
+    }
+    cout << "The Companys Management Structure is as Follows:" << endl
+         << endl;
+    cout << "CEO: " << CEOs[0].return_name() << endl
+         << endl;
+    cout << "Store Manager: " << Store_Managers[0].return_name() << endl
+         << endl;
+    cout << "Assisstant Store Managers: " << endl;
+    for (int i = 0; i < Assistant_Store_Managers.size(); i++)
+    {
+        cout << Assistant_Store_Managers[i].return_name() << " is the " << Assistant_Store_Managers[i].return_position_description() << endl;
+    }
+    cout << endl;
+    cout << "Department Managers: " << endl;
+    for (int i = 0; i < Department_Managers.size(); i++)
+    {
+        cout << Department_Managers[i].return_name() << " is the " << Department_Managers[i].return_position_description() << endl;
+    }
+
     return 0;
 }
